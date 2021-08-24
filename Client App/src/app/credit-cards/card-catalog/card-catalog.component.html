@@ -1,0 +1,17 @@
+<div fxLayout="row wrap" fxLayoutAlign="center">
+  <app-credit-card
+    fxFlex.xs="80"
+    fxFlex.sm="40"
+    fxFlex="25"
+    *ngFor="let cardItem of cards"
+    [card]="cardItem"
+  ></app-credit-card>
+</div>
+
+<button
+  mat-fab
+  color="primary"
+  aria-label="Add new Card"
+  (click)="onNavigateToCreateCardView()">
+  <mat-icon>add</mat-icon>
+</button>

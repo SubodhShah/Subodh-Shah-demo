@@ -1,0 +1,42 @@
+<div fxLayout="row" fxLayoutAlign="space-between">
+  <h1>{{ !!isEditFlowActive ? 'Edit Card Information' : 'Add Card Information' }}</h1>
+
+  <button mat-button (click)="onNavigateToCatalog()">
+    <mat-icon>arrow_back</mat-icon>
+   Back to list
+  </button>
+</div>
+
+<div fxLayout="row">
+  <form fxFlex [formGroup]="cardForm" (ngSubmit)="cardForm.valid && onFormSubmit()">
+    <fieldset>
+      <div fxLayout="column">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Card Number</mat-label>
+          <input matInput formControlName="cardNumber">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Expiry Date</mat-label>
+          <input matInput type="date" formControlName="expiryDate">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Cvv</mat-label>
+          <input matInput maxlength="4" type="password" formControlName="cVV">
+        </mat-form-field>
+      </div>
+
+      <div fxLayoutAlign="end" fxLayoutGap="16px">
+        <button type="submit" mat-raised-button color="primary">SAVE</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
