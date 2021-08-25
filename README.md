@@ -12,6 +12,9 @@ To run laravel api Tests
 Find the output of test on PHP Test Image
 
 
+Please use Client Side for angular app
+
+
 
  
 
