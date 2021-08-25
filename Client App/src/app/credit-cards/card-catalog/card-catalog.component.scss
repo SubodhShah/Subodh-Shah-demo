@@ -1,5 +1,8 @@
 button {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 32px;
+  right:32px;
+}
+.mat-button .mat-button-wrapper>*, .mat-flat-button .mat-button-wrapper>*, .mat-stroked-button .mat-button-wrapper>*, .mat-raised-button .mat-button-wrapper>*, .mat-icon-button .mat-button-wrapper>*, .mat-fab .mat-button-wrapper>*, .mat-mini-fab .mat-button-wrapper>* {
+  vertical-align: middle;
 }

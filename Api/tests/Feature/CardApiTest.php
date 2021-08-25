@@ -24,7 +24,7 @@ class CardApiTest extends TestCase
             'lastName' => 'Doe',
             'cardNumber' => '123-123-123-123',
             'expiryDate' => '2021-08-24',
-            'CVV' => '900',
+            'cVV' => '900',
         ]);
     }
 
@@ -68,7 +68,7 @@ class CardApiTest extends TestCase
             'lastName' => 'Doe',
             'cardNumber' => '123-123-123-123',
             'expiryDate' => '2022-11-24',
-            'CVV' => '789',
+            'cVV' => '789',
 
         ])->assertStatus(200);
 
@@ -86,6 +86,23 @@ class CardApiTest extends TestCase
 
         $this->getJson('/api/cards/' . Card::first()->id)->assertStatus(200);
     }
+
+    /** @test */
+    public function validation_works_for_api(): void
+    {
+        $response = $this->postJson('api/cards', [
+            //'firstName' => 'Joe',
+            'lastName' => 'Doe',
+            'cardNumber' => '123-123-123-123',
+            'expiryDate' => '2021-08-24',
+            'cVV' => '900',
+        ]);
+
+        $response->assertStatus(500);
+
+    }
+
+    
 
 
 }
